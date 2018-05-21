@@ -37,9 +37,16 @@ namespace ImageGenerator
             Task.WaitAll(fileTasks.ToArray<Task>());
             IEnumerable<string> dataFiles = fileTasks.Select(ft => ft.Result).Union(options.Files).ToArray();
             List<Drawing> drawings = new List<Drawing>();
+            List<string> dataFileList = new List<string>();
             foreach (string dataFile in dataFiles)
             {
-                drawings.AddRange(ParseDrawingsFromFile(dataFile).Where(d => d.Recognized));
+                string directory = Path.GetDirectoryName(dataFile);
+                string file = Path.GetFileName(dataFile);
+                dataFileList.AddRange(Directory.EnumerateFiles(directory, file));
+            }
+            foreach (string file in dataFileList.Distinct())
+            {
+                drawings.AddRange(ParseDrawingsFromFile(file).Where(d => d.Recognized));
             }
 
             Drawing[] recognizedDrawings = drawings.Randomize().ToArray();

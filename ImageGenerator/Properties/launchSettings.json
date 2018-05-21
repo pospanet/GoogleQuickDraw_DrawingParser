@@ -2,7 +2,7 @@
   "profiles": {
     "ImageGenerator": {
       "commandName": "Project",
-      "commandLineArgs": "-r 8 -c 8 -f C:\\Users\\pospa\\Temp\\!!!_Data_!!!\\QuickDrawDatasets\\full_simplified_apple.ndjson C:\\Users\\pospa\\Temp\\!!!_Data_!!!\\QuickDrawDatasets\\full_simplified_eye.ndjson -o C:\\Users\\pospa\\Projects\\!!!_Workshops_!!!\\PyCon\\dataset\\out"
+      "commandLineArgs": "-r 8 -c 8 -f C:\\Users\\pospa\\Temp\\!!!_Data_!!!\\QuickDrawDatasets\\full_simplified_*.ndjson C:\\Users\\pospa\\Temp\\!!!_Data_!!!\\QuickDrawDatasets\\full_simplified_apple.ndjson -o C:\\Users\\pospa\\Projects\\!!!_Workshops_!!!\\PyCon\\dataset\\out"
     }
   }
 }
