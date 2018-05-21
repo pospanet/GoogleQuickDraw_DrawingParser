@@ -69,7 +69,7 @@ namespace ImageGenerator
                         string.Concat("Page_", page, ".bboxes.tsv"));
                     string cntkBboxLabelsPath = Path.Combine(Path.GetFullPath(options.OutputPath),
                         string.Concat("Page_", page, ".bboxes.labels.tsv"));
-                    using (StreamWriter sw = File.CreateText(cntkBboxesPath))
+                    using (StreamWriter sw = File.CreateText(cntkBboxLabelsPath))
                     {
                         string tabularizedLabels =
                             labels.Select(l => l.Item1)
@@ -77,7 +77,7 @@ namespace ImageGenerator
                         sw.WriteLine(tabularizedLabels);
                         sw.Flush();
                     }
-                    using (StreamWriter sw = File.CreateText(cntkBboxLabelsPath))
+                    using (StreamWriter sw = File.CreateText(cntkBboxesPath))
                     {
                         string tabularizedLabels =
                             labels.Select(l => string.Concat(
